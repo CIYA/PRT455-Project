@@ -130,7 +130,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ShoppingController.cs" />
     <Compile Include="DAL\Online_Shopping.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,26 +197,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="CSS\adminfonts\roboto-bold-webfont.svg" />
-    <Content Include="CSS\adminfonts\roboto-medium-webfont.svg" />
-    <Content Include="CSS\adminfonts\roboto-regular-webfont.svg" />
-    <Content Include="CSS\adminfonts\roboto-thin-webfont.svg" />
-    <Content Include="CSS\admin_stylesheet.css" />
-    <Content Include="CSS\CustomStyleSheet.css" />
-    <Content Include="CSS\fonts\AdminLoginFonts.css" />
-    <Content Include="CSS\fonts\SegoeUI-Bold.svg" />
-    <Content Include="CSS\fonts\SegoeUI-Light.svg" />
-    <Content Include="CSS\fonts\SegoeUI.svg" />
-    <Content Include="CSS\fonts\SEGOEUIL.svg" />
-    <Content Include="CSS\fonts\Utsaah-Bold.svg" />
-    <Content Include="CSS\fonts\UTSAAH.svg" />
-    <Content Include="CSS\fonts\UTSAAHB.svg" />
-    <Content Include="CSS\fullcalendar\fullcalendar.print.css" />
-    <Content Include="CSS\fullcalendar\fullCalender.css" />
-    <Content Include="CSS\jquery.dataTables.css" />
-    <Content Include="CSS\owl.carousel.css" />
-    <Content Include="CSS\stylesheet.css" />
-    <Content Include="CSS\sweetalert.css" />
     <Content Include="DAL\Online_Shopping.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Online_Shopping.edmx</DependentUpon>
@@ -224,6 +207,8 @@
       <DependentUpon>Online_Shopping.edmx</DependentUpon>
       <LastGenOutput>Online_Shopping.cs</LastGenOutput>
     </Content>
+    <Content Include="EmailTemplates\ForgotPassword.html" />
+    <Content Include="EmailTemplates\Registration.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -354,44 +339,6 @@
     <Content Include="DAL\Online_Shopping.edmx.diagram">
       <DependentUpon>Online_Shopping.edmx</DependentUpon>
     </Content>
-    <Content Include="CSS\adminfonts\roboto-bold-webfont.eot" />
-    <Content Include="CSS\adminfonts\roboto-bold-webfont.ttf" />
-    <Content Include="CSS\adminfonts\roboto-bold-webfont.woff" />
-    <Content Include="CSS\adminfonts\roboto-bold-webfont.woff2" />
-    <Content Include="CSS\adminfonts\roboto-medium-webfont.eot" />
-    <Content Include="CSS\adminfonts\roboto-medium-webfont.ttf" />
-    <Content Include="CSS\adminfonts\roboto-medium-webfont.woff" />
-    <Content Include="CSS\adminfonts\roboto-medium-webfont.woff2" />
-    <Content Include="CSS\adminfonts\roboto-regular-webfont.eot" />
-    <Content Include="CSS\adminfonts\roboto-regular-webfont.ttf" />
-    <Content Include="CSS\adminfonts\roboto-regular-webfont.woff" />
-    <Content Include="CSS\adminfonts\roboto-regular-webfont.woff2" />
-    <Content Include="CSS\adminfonts\roboto-thin-webfont.eot" />
-    <Content Include="CSS\adminfonts\roboto-thin-webfont.ttf" />
-    <Content Include="CSS\adminfonts\roboto-thin-webfont.woff" />
-    <Content Include="CSS\adminfonts\roboto-thin-webfont.woff2" />
-    <Content Include="CSS\fonts\SegoeUI-Bold.eot" />
-    <Content Include="CSS\fonts\SegoeUI-Bold.ttf" />
-    <Content Include="CSS\fonts\SegoeUI-Bold.woff" />
-    <Content Include="CSS\fonts\SegoeUI-Light.eot" />
-    <Content Include="CSS\fonts\SegoeUI-Light.ttf" />
-    <Content Include="CSS\fonts\SegoeUI-Light.woff" />
-    <Content Include="CSS\fonts\SegoeUI.eot" />
-    <Content Include="CSS\fonts\SegoeUI.ttf" />
-    <Content Include="CSS\fonts\SegoeUI.woff" />
-    <Content Include="CSS\fonts\SEGOEUIL.otf" />
-    <Content Include="CSS\fonts\SEGOEUIL.ttf" />
-    <Content Include="CSS\fonts\SEGOEUIL.woff" />
-    <Content Include="CSS\fonts\Utsaah-Bold.eot" />
-    <Content Include="CSS\fonts\Utsaah-Bold.ttf" />
-    <Content Include="CSS\fonts\Utsaah-Bold.woff" />
-    <Content Include="CSS\fonts\Utsaah.eot" />
-    <Content Include="CSS\fonts\UTSAAH.otf" />
-    <Content Include="CSS\fonts\UTSAAH.ttf" />
-    <Content Include="CSS\fonts\UTSAAH.woff" />
-    <Content Include="CSS\fonts\UTSAAHB.otf" />
-    <Content Include="CSS\fonts\UTSAAHB.ttf" />
-    <Content Include="CSS\fonts\UTSAAHB.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -420,30 +367,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Admin\Categories.cshtml" />
-    <Content Include="Views\Admin\ChangePassword.cshtml" />
-    <Content Include="Views\Admin\Dashboard.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\ProductDetail.cshtml" />
-    <Content Include="Views\Admin\Products.cshtml" />
-    <Content Include="Views\Admin\UpdateCategory.cshtml" />
-    <Content Include="Views\Admin\UpdateProduct.cshtml" />
-    <Content Include="Views\Admin\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\_AdminMenu.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Search\MyCart.cshtml" />
     <Content Include="Views\Search\ProductDetail.cshtml" />
     <Content Include="Views\Search\_filterSearch.cshtml" />
     <Content Include="Views\Search\_Paging.cshtml" />
-    <Content Include="Views\Shopping\CheckOut.cshtml" />
-    <Content Include="Views\Shopping\MyCart.cshtml" />
-    <Content Include="Views\Shopping\_ShippingAddress.cshtml" />
-    <Content Include="Views\Shopping\PaymentSuccess.cshtml" />
-    <Content Include="Views\Admin\Orders.cshtml" />
-    <Content Include="Views\Admin\OrderDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
